@@ -10,11 +10,10 @@ import AuthorDetail from "./AuthorDetail"
 
 function App() {
   const [currentAuthor,setCurrentAuthor] = useState(null);
+  const [filteredAuthors,setFilteredAuthors] = useState(authors)
   const selectAuthor = author => {
     setCurrentAuthor(author)
   };
-
-  const [filteredAuthors,setFilteredAuthors] = useState(authors)
   const filterAuthors = query => {
     setFilteredAuthors(authors.filter(author => {
       const authorName = `${author.first_name} ${author.last_name}`;

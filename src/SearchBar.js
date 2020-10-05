@@ -5,10 +5,9 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 const SearchBar = (props) => {
   const [query,setQuery] = useState("")
 
-
   const handleChange = event => {
     setQuery(event.target.value)
-    props.filterAuthor(query)
+    props.filterAuthor(event.target.value)
   }
     return (
       <div className="form-group col-lg-6 col-12 mx-auto">
@@ -21,7 +20,7 @@ const SearchBar = (props) => {
                   />
           <div className="input-group-append">
             <span className="input-group-text">
-              <FontAwesomeIcon icon={faSearch} onClick={() => props.filterAuthor(query)} />
+              <FontAwesomeIcon icon={faSearch} />
             </span>
           </div>
         </div>
