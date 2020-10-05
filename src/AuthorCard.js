@@ -2,9 +2,10 @@ import React from "react";
 
 const AuthorCard = props => {
   const author = props.author;
+  const selected = props.select;
   const authorName = `${author.first_name} ${author.last_name}`;
   return (
-    <div className="col-lg-4 col-md-6 col-12">
+    <div className="col-lg-4 col-md-6 col-12" onClick={() => selected(author)}>
       <div className="card">
         <div className="image">
           <img
